@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+  h1= theAlbum.name
+  p= "Genre: " + theAlbum.genre
+  p= "Artist: " + theAlbum.artist
+  p= "Star Rating: " + theAlbum.stars
+  p= "Explicit: " + theAlbum.explicit
+
+  a(href="/albums/" + theAlbum.id + '/edit') Edit
+
+  form(action="/albums/#{theAlbum.id}/delete?_method=DELETE", method="POST")
+    div
+      input(type="submit" value="delete")
+
+
+

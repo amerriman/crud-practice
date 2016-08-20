@@ -1,0 +1,23 @@
+extends ../layout
+
+block content
+  h1 Edit Album
+
+  form(action="/albums/#{theAlbum.id}/update?_method=PUT", method="POST")
+    div
+      label Artist
+      input(type="text" name="album_artist" value= theAlbum.artist)
+    div
+      label Name
+      input(type="text" name="album_name" value= theAlbum.name)
+    div
+      label Genre
+      input(type="text" name="album_genre" value= theAlbum.genre)
+    div
+      label Stars
+      input(type="number" name="album_stars" min="0" max="5" value= theAlbum.stars)
+    div
+      label Explicit
+      input(type="checkbox" name="album_explicit" checked=(theAlbum.explicit == true))
+    div
+      input(type="submit" value="Update")

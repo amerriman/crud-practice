@@ -1,12 +1,36 @@
 extends ../layout
 
 block content
-  h1 New Album
+  h1 Create Album
 
   form(action="/albums", method="post")
     div
-      Name
+    #container.newAlbum
+      p Artist
+      input(type="text" name="album_artist")
+
+      p Album
       input(type="text" name="album_name")
 
+      p Genre
+      select(name="album_genre")
+        option(value="Jazz") Jazz
+        option(value="Rock") Rock
+        option(value="Classical") Classical
+        option(value="Pop") Pop
+
+      p Stars
+      label 1
+      input(type="radio" value="1" name="album_stars")
+      input(type="radio" value="2" name="album_stars")
+      input(type="radio" value="3" name="album_stars")
+      input(type="radio" value="4" name="album_stars")
+      input(type="radio" value="5" name="album_stars")
+      label 5
+
+      p
+      input(type="checkbox" name="album_explicit")
+      label Contains Explicit Language
     div
+      p
       input(type="submit")
